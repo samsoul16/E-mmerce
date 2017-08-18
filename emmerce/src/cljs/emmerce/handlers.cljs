@@ -26,6 +26,7 @@
  :inc-level
  (fn [db [_ lvl]]
    (assoc-in db [:chatbot :level] (inc lvl))))
+
 (reg-event-db
  :dec-level
  (fn [db [_ lvl]]
