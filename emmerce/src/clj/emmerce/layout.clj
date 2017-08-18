@@ -4,7 +4,8 @@
             [markdown.core :refer [md-to-html-string]]
             [ring.util.http-response :refer [content-type ok]]
             [ring.util.anti-forgery :refer [anti-forgery-field]]
-            [ring.middleware.anti-forgery :refer [*anti-forgery-token*]]))
+            [ring.middleware.anti-forgery :refer [*anti-forgery-token*]]
+            [clojure.data.json :as json]))
 
 (declare ^:dynamic *app-context*)
 (parser/set-resource-path!  (clojure.java.io/resource "templates"))
@@ -23,6 +24,14 @@
           :csrf-token *anti-forgery-token*
           :servlet-context *app-context*)))
     "text/html; charset=utf-8"))
+(defn render-json
+  "renders the HTML template to json"
+  [params]
+  (content-type
+   (ok
+    (json/json-str params))
+   "application/json; charset=utf-8"))
+
 
 (defn error-page
   "error-details should be a map containing the following keys:

@@ -34,7 +34,9 @@
                  [selmer "1.11.0"]
                  [reagent-material-ui "0.2.4"]
                  [soda-ash "0.3.0"]
-                 [expectations "2.2.0-beta1"]]
+                 [expectations "2.2.0-beta1"]
+                 [clj-http "3.7.0"]
+                 [org.clojure/data.json "0.2.6"]]
 
   :min-lein-version "2.0.0"
 
