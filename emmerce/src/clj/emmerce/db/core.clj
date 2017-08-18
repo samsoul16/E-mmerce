@@ -26,6 +26,7 @@
 (defn get-user [email]
   (mc/find-one-as-map db "users" {:email email}))
 
+;;;;;CHAT-BOT FUNCTIONS
 
 (defn insert-chat
   "Inserts the chats in DB"
@@ -38,3 +39,22 @@
   "Retrieves all the chats of the user"
   [email]
   (mc/find-maps db "chats" {:email email}))
+
+;;;;;VIDEO-REF
+
+(defn set-initial-level
+  "Sets initial level to 1"
+  [email]
+  (acknowledged? (mc/insert db "videos" {:email email
+                                         :level 1})))
+
+(defn update-level
+  "Updates level of user"
+  [email current-level]
+  (acknowledged? (mc/update db "videos" {:email email}
+                            {$set {:level current-level}})))
+
+(defn get-level
+  "Retrieves the current level"
+  [email]
+  (mc/find-maps db "videos" {:email email}))

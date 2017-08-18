@@ -14,7 +14,6 @@
   {:status false
    :content nil})
 
-
 (defn translate-text
   "Translated the original text"
   [lang text]

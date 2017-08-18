@@ -9,22 +9,48 @@
             [reagent-material-ui.core :as ui]
             [soda-ash.core :as sa]))
 
+(def server "http://localhost:3000/")
+
 (defn prev-operation []
   (let [lvl @(rf/subscribe [:get-level])]
     (rf/dispatch [:dec-level lvl])))
 
+(defn demo [response]
+  (let [content (:content response)
+        level (:level (get content 0))
+        lvl (js/parseInt level)]
+    #_(.log js/console (inc level))
+    (if (= [] content)
+      (GET (str server "setlevel")
+           {:params {:email "sachin@mindseed.in"}
+            :format :json
+            :response-format :json
+            :keywords? true
+            :handler #()
+            :error-handler #()})
+      (GET (str server "updatelevel")
+           {:params {:email "sachin@mindseed.in"
+                     :level (inc lvl)}
+            :format :json
+            :response-format :json
+            :keywords? true
+            :handler #()
+            :error-handler #()}))))
 
 (defn next-operation []
   (let [lvl @(rf/subscribe [:get-level])]
-    (if (< lvl 4)
-      (do
-        (rf/dispatch [:toggle-completed (keyword (str lvl))])
-        (rf/dispatch [:toggle-active (keyword (str (inc lvl)))])
-        (rf/dispatch [:inc-level lvl]))
-      (do
-        (rf/dispatch [:toggle-completed (keyword (str lvl))])
-        (rf/dispatch [:toggle-active (keyword (str (inc lvl)))])
-        (js/alert "Congratulations!! You have finished all the levels")))))
+    (GET (str server "level")
+            {:params {:email "sachin@mindseed.in"}
+             :format :json
+             :response-format :json
+             :keywords? true
+             :handler demo
+             :error-handler #(js/alert "error")})
+       (rf/dispatch [:toggle-completed (keyword (str lvl))])
+       (rf/dispatch [:toggle-active (keyword (str (inc lvl)))])
+       (if (< lvl 4)
+        (rf/dispatch [:inc-level lvl])
+        (js/alert "Congratulations!! You have finished all the levels"))))
 
 (defn videoref []
   []
