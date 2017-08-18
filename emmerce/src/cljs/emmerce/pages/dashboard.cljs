@@ -7,3 +7,8 @@
             [emmerce.handlers]
             [emmerce.subscriptions]
             [reagent-material-ui.core :as ui]))
+
+
+(defn dashboard []
+  [:div
+   [:h2 "DASHBOARD PAGE"]])

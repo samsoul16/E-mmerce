@@ -20,18 +20,58 @@
 
 ;; Material UI HELPERS
 (def reactify r/as-element)
-(defn icon [name] [ui/FontIcon {:className "material-icons"} name])
+(defn icon [nme] [ui/FontIcon {:className "material-icons"} nme])
 (defn color [name] (aget ui/colors name))
 
 
 ;; App Theme
 (defonce theme-defaults {:muiTheme (ui/getMuiTheme
-                                    (-> ui/darkBaseTheme
+                                    (-> ui/lightBaseTheme
                                         (js->clj :keywordize-keys true)
-                                        (update :palette merge {:primary1Color (color "amber500")
-                                                                :primary2Color (color "amber700")})
+                                        (update :palette merge {:primary1Color (color "purple500")
+                                                                :primary2Color (color "purple700")
+                                                                :primary3Color (color "purple100")
+                                                                :accent1Color (color "pinkA200")
+                                                                :textColor (color "grey900")
+                                                                :alternateTextColor (color "white")
+                                                                :borderColor (color "grey400")
+                                                                })
                                         clj->js))})
 
+(defn simple-nav []
+  (let [is-open? (r/atom false)
+        close #(reset! is-open? false)]
+    (fn []
+      [:div
+       [ui/AppBar {:zDepth 2 :title "Emmerce in English"
+                   :onLeftIconButtonTouchTap #(reset! is-open? true)}]
+       [ui/Drawer
+        {:docked false :width 400 :open @is-open?  :onRequestChange #(close)}
+        [ui/Card
+         [ui/CardMedia {:overlay (reactify [ui/CardText (str (:name @(rf/subscribe [:get-user])))])}
+          [:img {:src (str js/context "/img/learn.jpg")}]]]
+        [ui/Divider]
+        [ui/List
+         [ui/ListItem {:primaryText "Home" :leftIcon (reactify [icon "home"])
+                       :onClick (fn [_] (secretary/dispatch! "/home") (close))}]
+         [ui/Divider]
+         [ui/ListItem {:primaryText "Chat with Evelyn" :leftIcon (reactify [icon "chat"])
+                       :onClick (fn [_] (secretary/dispatch! "/chatbot") (close))}]
+         [ui/Divider]
+         [ui/ListItem {:primaryText "Video Course" :leftIcon (reactify [icon "ondemand_video"])
+                       :onClick (fn [_] (secretary/dispatch! "/videos") (close))}]
+         [ui/Divider ]
+         [ui/ListItem {:primaryText "Play the Game" :leftIcon (reactify [icon "games"])
+                       :onClick (fn [_] (secretary/dispatch! "/game") (close))}]
+         [ui/Divider]
+         [ui/ListItem {:primaryText "Your Dashboard" :leftIcon (reactify [icon "dashboard"])
+                       :onClick (fn [_] (secretary/dispatch! "/dashboard") (close))}]
+         [ui/Divider]
+         [ui/ListItem {:primaryText "Logout" :leftIcon (reactify [icon "power_settings_new"])
+                       :onClick (fn [_]
+                                  (secretary/dispatch! "/")
+                                  (close)
+                                  (.signOut (.getAuthInstance js/gapi.auth2)))}]]]])))
 
 (defn about-page []
   [:div.container
@@ -41,7 +81,6 @@
 
 (defn home-page []
   [:div
-   #_[simple-nav]
    [:h2 "Welcome to a simple, example application."]])
 
 (defn login-page []
@@ -60,24 +99,47 @@
   [:div])
 
 (def pages
-  {:home #'home-page
-   :about #'about-page})
+  {:login #'login/login
+   :home #'home/home
+   :chatbot #'chatbot/chatbot
+   :videos #'videoref/videoref
+   :game #'game/game
+   :dashboard #'dashboard/dashboard})
 
 (defn page []
   [ui/MuiThemeProvider theme-defaults
    [:div
-    [:div
-     [(pages @(rf/subscribe [:page]))]]]])
+    (let [active-page @(rf/subscribe [:page])]
+      [:div
+       (when (not= active-page :login)
+         [simple-nav])
+       [(pages active-page)]])]])
 
 ;; -------------------------
 ;; Routes
 (secretary/set-config! :prefix "#")
 
 (secretary/defroute "/" []
+  (rf/dispatch [:set-active-page :login]))
+
+(secretary/defroute "/login" []
+  (rf/dispatch [:set-active-page :login]))
+
+(secretary/defroute "/home" []
   (rf/dispatch [:set-active-page :home]))
 
-(secretary/defroute "/about" []
-  (rf/dispatch [:set-active-page :about]))
+(secretary/defroute "/chatbot" []
+  (rf/dispatch [:set-active-page :chatbot]))
+
+(secretary/defroute "/videos" []
+  (rf/dispatch [:set-active-page :videos]))
+
+(secretary/defroute "/game" []
+  (rf/dispatch [:set-active-page :game]))
+
+(secretary/defroute "/dashboard" []
+  (rf/dispatch [:set-active-page :dashboard]))
+
 
 ;; -------------------------
 ;; History
