@@ -54,12 +54,12 @@
          [ui/IconButton {:style {:height 90 :width 90 :padding 20} :tooltip "Hit Send"
                          :onClick (fn [e]
                                     (POST (str server "addchat")
-                                         {:params {:email @(rf/subscribe [:get-user-email])
-                                                   :lang @curr-lang
-                                                   :text (.-value (.getElementById js/document "ipText"))}
-                                          :format :json
-                                          :response-format :json
-                                          :keywords? true
-                                          :handler recieve-chat
-                                          :error-handler error-handler}))}
+                                          {:params {:email @(rf/subscribe [:get-user-email])
+                                                    :lang @curr-lang
+                                                    :text (.-value (.getElementById js/document "ipText"))}
+                                           :format :json
+                                           :response-format :json
+                                           :keywords? true
+                                           :handler recieve-chat
+                                           :error-handler error-handler}))}
           (reactify [:img {:src (str js/context "/img/send-button.png")}])]]]])))
