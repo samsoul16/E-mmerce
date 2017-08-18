@@ -5,7 +5,8 @@
             [emmerce.config :refer [env]]
             [clojure.tools.cli :refer [parse-opts]]
             [clojure.tools.logging :as log]
-            [mount.core :as mount])
+            [mount.core :as mount]
+            [emmerce.db.core :refer [db]])
   (:gen-class))
 
 (def cli-options
