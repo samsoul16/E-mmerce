@@ -10,7 +10,7 @@
             [soda-ash.core :as sa]))
 
 
-(defn index []
+(defn videoref []
   []
   [:div.centerFlex
    [:div.middle
