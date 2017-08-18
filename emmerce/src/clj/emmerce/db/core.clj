@@ -4,7 +4,8 @@
               [monger.operators :refer :all]
               [mount.core :refer [defstate]]
               [monger.result :refer [acknowledged?]]
-              [emmerce.config :refer [env]]))
+              [emmerce.config :refer [env]]
+              [emmerce.chatbot.translator :as translator]))
 
 (defstate db*
   :start (-> env :database-url mg/connect-via-uri)
@@ -58,3 +59,19 @@
   "Retrieves the current level"
   [email]
   (mc/find-maps db "videos" {:email email}))
+
+
+;;;;;;;;;;;;;GAME
+
+;;;;;USED TO SEED FRUITS DB - HAVE TAKEN SPANISH AS DEFAULT LANGUAGE
+(def f ["apple" "apricot" "avocado" "banana" "blackberry" "cantaloupe" "cherry" "coconut" "grape" "grapefruit" "kiwi" "lemon" "mango" "orange" "papaya" "peach" "pear" "pineapple" "strawberry" "watermelon"])
+
+(defn add-fruit [name trans imglink]
+  (mc/insert db "fruits" {:name name
+                          :trans trans
+                          :img imglink}))
+(defn fill-fruits []
+  (for [i (range 20)]
+    (add-fruit (get f i)
+               (translator/translate "SPANISH" (get f i))
+               (str (get f i) ".jpg"))))
