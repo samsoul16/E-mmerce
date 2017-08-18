@@ -35,3 +35,13 @@
  :get-video-id
  (fn [db [_ lvl]]
    (:id (lvl (:chatbot db)))))
+
+(reg-sub
+ :get-user-email
+ (fn [db _]
+   (:email (:user db))))
+
+(reg-sub
+ :get-chats
+ (fn [db _]
+   (:chats db)))

@@ -40,11 +40,66 @@ body {
 .home {
     padding : 50px;
     display: flex ;
+    justify-content : space-around;
 }
 
 .home-card{
-    width : 300px;
-    height: 500px;
+    width : 600px !important;
+    height : 807px !important;
+}
+
+.chat-bot {
+    width : 50%;
+    margin-top : 50px;
+    margin-left : auto !important;
+    margin-right : auto !important;
+}
+
+.chat-evelyn {
+    margin : 5px;
+    padding : 8px;
+    width : 60%;
+    display : flex;
+    justify-content : space-between;
+    align-items : center;
+    margin-right : auto;
+    background-color : #9C27B0;
+    color : #FFFFFF;
+}
+
+.chat-user {
+    margin : 5px;
+    padding : 8px;
+    display : flex;
+    width : 60%;
+    justify-content : space-between;
+    align-items : center;
+    margin-left : auto;
+    background-color : #FF4081;
+    color : #FFFFFF;
+}
+
+.chat-paper {
+    height : 750px;
+}
+
+.chat-box {
+    height : 600px;
+    max-height : 600px;
+    padding : 10px;
+    overflow: auto;
+}
+
+.game {
+    width : 75%;
+    margin-top : 50px;
+    margin-left : auto !important;
+    margin-right : auto !important;
+}
+
+.game-paper {
+    height : 750px;
+    padding : 50px;
 }
 
 h1 {

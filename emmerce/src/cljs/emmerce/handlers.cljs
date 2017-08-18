@@ -41,3 +41,9 @@
  :toggle-active
  (fn [db [_ lvl]]
    (assoc-in db [:chatbot lvl :active] true)))
+
+
+(reg-event-db
+ :set-chats
+ (fn [db [_ chats]]
+   (assoc db :chats chats)))
