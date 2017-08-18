@@ -40,17 +40,17 @@
        (-> (response/ok (-> "docs/docs.md" io/resource slurp))
            (response/header "Content-Type" "text/plain; charset=utf-8")))
 
-  (GET "/addchat" [email lang text]
+  (POST "/addchat" [email lang text]
         (insert-chat email lang text))
 
   (GET "/chats" [email]
        (get-chats email))
 
-  (GET "/updatelevel" [email level]
+  (POST "/updatelevel" [email level]
         (update-level email level))
 
   (GET "/level" [email]
        (get-level email))
 
-  (GET "/setlevel" [email]
+  (POST "/setlevel" [email]
        (set-initial-level email)))

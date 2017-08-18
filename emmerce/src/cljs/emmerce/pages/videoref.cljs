@@ -21,14 +21,14 @@
         lvl (js/parseInt level)]
     #_(.log js/console (inc level))
     (if (= [] content)
-      (GET (str server "setlevel")
+      (POST (str server "setlevel")
            {:params {:email "sachin@mindseed.in"}
             :format :json
             :response-format :json
             :keywords? true
             :handler #()
             :error-handler #()})
-      (GET (str server "updatelevel")
+      (POST (str server "updatelevel")
            {:params {:email "sachin@mindseed.in"
                      :level (inc lvl)}
             :format :json
