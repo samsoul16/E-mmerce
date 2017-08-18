@@ -15,3 +15,23 @@
  :get-user
  (fn [db _]
    (:user db)))
+
+(reg-sub
+ :get-level
+ (fn [db _]
+   (:level (:chatbot db))))
+
+(reg-sub
+ :get-completed-status
+ (fn [db [_ lvl]]
+   (:completed (lvl (:chatbot db)))))
+
+(reg-sub
+ :get-active-status
+ (fn [db [_ lvl]]
+   (:active (lvl (:chatbot db)))))
+
+(reg-sub
+ :get-video-id
+ (fn [db [_ lvl]]
+   (:id (lvl (:chatbot db)))))
