@@ -67,7 +67,7 @@
          [ui/ListItem {:primaryText "Your Dashboard" :leftIcon (reactify [icon "dashboard"])
                        :onClick (fn [_] (secretary/dispatch! "/dashboard") (close))}]
          [ui/Divider]
-         [ui/ListItem {:primaryText "Logout" :leftIcon (reactify [icon "power_settings_new"])
+         [ui/ListItem {:primaryText "Logout" :leftIcon (reactify [icon "exit_to_app"])
                        :onClick (fn [_]
                                   (secretary/dispatch! "/")
                                   (close)

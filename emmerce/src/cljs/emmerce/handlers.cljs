@@ -18,6 +18,11 @@
    (assoc db :user {:name user :email email})))
 
 (reg-event-db
+ :set-chats
+ (fn [db [_ chats]]
+   (assoc db :chats chats)))
+
+(reg-event-db
   :set-docs
   (fn [db [_ docs]]
     (assoc db :docs docs)))
