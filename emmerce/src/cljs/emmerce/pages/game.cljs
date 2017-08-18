@@ -7,3 +7,7 @@
             [emmerce.handlers]
             [emmerce.subscriptions]
             [reagent-material-ui.core :as ui]))
+
+(defn game []
+  [:div
+   [:h2 "GAME PAGE"]])

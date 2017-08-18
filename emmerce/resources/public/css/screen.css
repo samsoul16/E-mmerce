@@ -3,6 +3,74 @@ body {
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     height: 100%;
 }
+
+/* My custom Styles */
+.dark-primary-color    { background-color: #7B1FA2 !important; } //purple700
+.default-primary-color { background-color: #9C27B0 !important; } //purple500
+.light-primary-color   { background-color: #E1BEE7 !important; } //purple100
+.text-primary-color    { color: #FFFFFF !important; } //white
+.accent-color          { background-color: #FF4081 !important; } //pinkA200
+.primary-text-color    { color: #212121 !important; } //grey900
+.secondary-text-color  { color: #757575 !important; } //grey600
+.divider-color         { border-color: #BDBDBD !important; } //grey400
+
+.menu {
+    width: 400px;
+    display: inline-block !important;
+    float: left !important;
+}
+
+.login {
+    width : 100%;
+    height : 966px;
+}
+
+.login-box {
+    margin: auto !important;
+    position : absolute;
+    top: 25%;
+    left: 40%;
+    width : 500px;
+    height : 500px;
+    background-color: #FF4081 !important;
+    padding : 100px;
+    text-align :center;
+}
+
+.home {
+    padding : 50px;
+    display: flex ;
+}
+
+.home-card{
+    width : 300px;
+    height: 500px;
+}
+
+h1 {
+   color : #FFFFFF !important;
+}
+.login-btn {
+    margin-top : 30px;
+    color : #FFFFFF !important;
+}
+
+.centerFlex {
+    height : 50%;
+    width : 50%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.flexButton{
+    display:flex;
+    justify-content: space-between;
+}
+.middle{
+    display:flex;
+    justify-content:center;
+}
+
 .navbar {
   margin-bottom: 10px;
   border-radius: 0px;
@@ -66,4 +134,3 @@ body {
         transform: rotate(360deg);
     }
 }
-

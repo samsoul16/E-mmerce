@@ -7,3 +7,7 @@
             [emmerce.handlers]
             [emmerce.subscriptions]
             [reagent-material-ui.core :as ui]))
+
+(defn videoref []
+  [:div
+   [:h2 "VIDEOS PAGE"]])

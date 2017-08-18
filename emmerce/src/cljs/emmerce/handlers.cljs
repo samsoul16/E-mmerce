@@ -8,9 +8,14 @@
     db/default-db))
 
 (reg-event-db
-  :set-active-page
-  (fn [db [_ page]]
-    (assoc db :page page)))
+ :set-active-page
+ (fn [db [_ page]]
+   (assoc db :page page)))
+
+(reg-event-db
+ :set-active-user
+ (fn [db [_ user email]]
+   (assoc db :user {:name user :email email})))
 
 (reg-event-db
   :set-docs
