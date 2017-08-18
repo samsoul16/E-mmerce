@@ -1,0 +1,275 @@
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.665 seconds.[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.78 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/emmerce/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/emmerce/core.cljs   line:59  column:2  ----[0m
+
+  [1mNo such namespace: secretary, could not locate secretary.cljs, secretary.cljc, or JavaScript source providing "secretary"[0m
+
+  [36m55[0m  [36m     [(pages @(rf/subscribe [:page]))]]]])[0m
+  [36m56[0m  [36m[0m
+  [36m57[0m  [36m;; -------------------------[0m
+  [36m58[0m  [36m;; Routes[0m
+  [33m59[0m  [1m(secretary/set-config! :prefix "#")[0m
+  [0m  [0m  [33m ^--- No such namespace: secretary, could not locate secretary.cljs, secretary.cljc, or JavaScript source providing "secretary"[0m
+  [36m60[0m  [36m[0m
+  [36m61[0m  [36m(secretary/defroute "/" [][0m
+  [36m62[0m  [36m  (rf/dispatch [:set-active-page :home]))[0m
+  [36m63[0m  [36m[0m
+  [36m64[0m  [36m(secretary/defroute "/about" [][0m
+
+[36m----  Compiler Warning : Please see src/cljs/emmerce/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/emmerce/core.cljs   line:59  column:2  ----[0m
+
+  [1mUse of undeclared Var secretary/set-config![0m
+
+  [36m55[0m  [36m     [(pages @(rf/subscribe [:page]))]]]])[0m
+  [36m56[0m  [36m[0m
+  [36m57[0m  [36m;; -------------------------[0m
+  [36m58[0m  [36m;; Routes[0m
+  [33m59[0m  [1m(secretary/set-config! :prefix "#")[0m
+  [0m  [0m  [33m ^--- Use of undeclared Var secretary/set-config![0m
+  [36m60[0m  [36m[0m
+  [36m61[0m  [36m(secretary/defroute "/" [][0m
+  [36m62[0m  [36m  (rf/dispatch [:set-active-page :home]))[0m
+  [36m63[0m  [36m[0m
+  [36m64[0m  [36m(secretary/defroute "/about" [][0m
+
+[36m----  Compiler Warning : Please see src/cljs/emmerce/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/emmerce/core.cljs   line:61  column:2  ----[0m
+
+  [1mNo such namespace: secretary, could not locate secretary.cljs, secretary.cljc, or JavaScript source providing "secretary"[0m
+
+  [36m57[0m  [36m;; -------------------------[0m
+  [36m58[0m  [36m;; Routes[0m
+  [36m59[0m  [36m(secretary/set-config! :prefix "#")[0m
+  [36m60[0m  [36m[0m
+  [33m61[0m  [1m(secretary/defroute "/" [][0m
+  [0m  [0m  [33m ^--- No such namespace: secretary, could not locate secretary.cljs, secretary.cljc, or JavaScript source providing "secretary"[0m
+  [36m62[0m  [36m  (rf/dispatch [:set-active-page :home]))[0m
+  [36m63[0m  [36m[0m
+  [36m64[0m  [36m(secretary/defroute "/about" [][0m
+  [36m65[0m  [36m  (rf/dispatch [:set-active-page :about]))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/emmerce/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/emmerce/core.cljs   line:61  column:2  ----[0m
+
+  [1mUse of undeclared Var secretary/defroute[0m
+
+  [36m57[0m  [36m;; -------------------------[0m
+  [36m58[0m  [36m;; Routes[0m
+  [36m59[0m  [36m(secretary/set-config! :prefix "#")[0m
+  [36m60[0m  [36m[0m
+  [33m61[0m  [1m(secretary/defroute "/" [][0m
+  [0m  [0m  [33m ^--- Use of undeclared Var secretary/defroute[0m
+  [36m62[0m  [36m  (rf/dispatch [:set-active-page :home]))[0m
+  [36m63[0m  [36m[0m
+  [36m64[0m  [36m(secretary/defroute "/about" [][0m
+  [36m65[0m  [36m  (rf/dispatch [:set-active-page :about]))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/emmerce/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/emmerce/core.cljs   line:64  column:2  ----[0m
+
+  [1mNo such namespace: secretary, could not locate secretary.cljs, secretary.cljc, or JavaScript source providing "secretary"[0m
+
+  [36m61[0m  [36m(secretary/defroute "/" [][0m
+  [36m62[0m  [36m  (rf/dispatch [:set-active-page :home]))[0m
+  [36m63[0m  [36m[0m
+  [33m64[0m  [1m(secretary/defroute "/about" [][0m
+  [0m  [0m  [33m ^--- No such namespace: secretary, could not locate secretary.cljs, secretary.cljc, or JavaScript source providing "secretary"[0m
+  [36m65[0m  [36m  (rf/dispatch [:set-active-page :about]))[0m
+  [36m66[0m  [36m[0m
+  [36m67[0m  [36m;; -------------------------[0m
+  [36m68[0m  [36m;; History[0m
+  [36m69[0m  [36m;; must be called after routes have been defined[0m
+
+[36m----  Compiler Warning : Please see src/cljs/emmerce/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/emmerce/core.cljs   line:64  column:2  ----[0m
+
+  [1mUse of undeclared Var secretary/defroute[0m
+
+  [36m61[0m  [36m(secretary/defroute "/" [][0m
+  [36m62[0m  [36m  (rf/dispatch [:set-active-page :home]))[0m
+  [36m63[0m  [36m[0m
+  [33m64[0m  [1m(secretary/defroute "/about" [][0m
+  [0m  [0m  [33m ^--- Use of undeclared Var secretary/defroute[0m
+  [36m65[0m  [36m  (rf/dispatch [:set-active-page :about]))[0m
+  [36m66[0m  [36m[0m
+  [36m67[0m  [36m;; -------------------------[0m
+  [36m68[0m  [36m;; History[0m
+  [36m69[0m  [36m;; must be called after routes have been defined[0m
+
+[36m----  Compiler Warning : Please see src/cljs/emmerce/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/emmerce/core.cljs   line:71  column:9  ----[0m
+
+  [1mUse of undeclared Var emmerce.core/History[0m
+
+  [36m67[0m  [36m;; -------------------------[0m
+  [36m68[0m  [36m;; History[0m
+  [36m69[0m  [36m;; must be called after routes have been defined[0m
+  [36m70[0m  [36m(defn hook-browser-navigation! [][0m
+  [33m71[0m  [1m  (doto (History.)[0m
+  [0m  [0m  [33m        ^--- Use of undeclared Var emmerce.core/History[0m
+  [36m72[0m  [36m    (events/listen[0m
+  [36m73[0m  [36m      HistoryEventType/NAVIGATE[0m
+  [36m74[0m  [36m      (fn [event][0m
+  [36m75[0m  [36m        (secretary/dispatch! (.-token event))))[0m
+  [36m76[0m  [36m    (.setEnabled true)))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/emmerce/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/emmerce/core.cljs   line:71  column:9  ----[0m
+
+  [1mUse of undeclared Var emmerce.core/History[0m
+
+  [36m67[0m  [36m;; -------------------------[0m
+  [36m68[0m  [36m;; History[0m
+  [36m69[0m  [36m;; must be called after routes have been defined[0m
+  [36m70[0m  [36m(defn hook-browser-navigation! [][0m
+  [33m71[0m  [1m  (doto (History.)[0m
+  [0m  [0m  [33m        ^--- Use of undeclared Var emmerce.core/History[0m
+  [36m72[0m  [36m    (events/listen[0m
+  [36m73[0m  [36m      HistoryEventType/NAVIGATE[0m
+  [36m74[0m  [36m      (fn [event][0m
+  [36m75[0m  [36m        (secretary/dispatch! (.-token event))))[0m
+  [36m76[0m  [36m    (.setEnabled true)))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/emmerce/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/emmerce/core.cljs   line:72  column:6  ----[0m
+
+  [1mNo such namespace: events, could not locate events.cljs, events.cljc, or JavaScript source providing "events"[0m
+
+  [36m68[0m  [36m;; History[0m
+  [36m69[0m  [36m;; must be called after routes have been defined[0m
+  [36m70[0m  [36m(defn hook-browser-navigation! [][0m
+  [36m71[0m  [36m  (doto (History.)[0m
+  [33m72[0m  [1m    (events/listen[0m
+  [0m  [0m  [33m     ^--- No such namespace: events, could not locate events.cljs, events.cljc, or JavaScript source providing "events"[0m
+  [36m73[0m  [36m      HistoryEventType/NAVIGATE[0m
+  [36m74[0m  [36m      (fn [event][0m
+  [36m75[0m  [36m        (secretary/dispatch! (.-token event))))[0m
+  [36m76[0m  [36m    (.setEnabled true)))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/emmerce/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/emmerce/core.cljs   line:72  column:6  ----[0m
+
+  [1mUse of undeclared Var events/listen[0m
+
+  [36m68[0m  [36m;; History[0m
+  [36m69[0m  [36m;; must be called after routes have been defined[0m
+  [36m70[0m  [36m(defn hook-browser-navigation! [][0m
+  [36m71[0m  [36m  (doto (History.)[0m
+  [33m72[0m  [1m    (events/listen[0m
+  [0m  [0m  [33m     ^--- Use of undeclared Var events/listen[0m
+  [36m73[0m  [36m      HistoryEventType/NAVIGATE[0m
+  [36m74[0m  [36m      (fn [event][0m
+  [36m75[0m  [36m        (secretary/dispatch! (.-token event))))[0m
+  [36m76[0m  [36m    (.setEnabled true)))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/emmerce/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/emmerce/core.cljs   line:73  column:7  ----[0m
+
+  [1mNo such namespace: HistoryEventType, could not locate HistoryEventType.cljs, HistoryEventType.cljc, or JavaScript source providing "HistoryEventType"[0m
+
+  [36m69[0m  [36m;; must be called after routes have been defined[0m
+  [36m70[0m  [36m(defn hook-browser-navigation! [][0m
+  [36m71[0m  [36m  (doto (History.)[0m
+  [36m72[0m  [36m    (events/listen[0m
+  [33m73[0m  [1m      HistoryEventType/NAVIGATE[0m
+  [0m  [0m  [33m      ^--- No such namespace: HistoryEventType, could not locate HistoryEventType.cljs, HistoryEventType.cljc, or JavaScript source providing "HistoryEventType"[0m
+  [36m74[0m  [36m      (fn [event][0m
+  [36m75[0m  [36m        (secretary/dispatch! (.-token event))))[0m
+  [36m76[0m  [36m    (.setEnabled true)))[0m
+  [36m77[0m  [36m[0m
+  [36m78[0m  [36m;; -------------------------[0m
+
+[36m----  Compiler Warning : Please see src/cljs/emmerce/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/emmerce/core.cljs   line:73  column:7  ----[0m
+
+  [1mUse of undeclared Var HistoryEventType/NAVIGATE[0m
+
+  [36m69[0m  [36m;; must be called after routes have been defined[0m
+  [36m70[0m  [36m(defn hook-browser-navigation! [][0m
+  [36m71[0m  [36m  (doto (History.)[0m
+  [36m72[0m  [36m    (events/listen[0m
+  [33m73[0m  [1m      HistoryEventType/NAVIGATE[0m
+  [0m  [0m  [33m      ^--- Use of undeclared Var HistoryEventType/NAVIGATE[0m
+  [36m74[0m  [36m      (fn [event][0m
+  [36m75[0m  [36m        (secretary/dispatch! (.-token event))))[0m
+  [36m76[0m  [36m    (.setEnabled true)))[0m
+  [36m77[0m  [36m[0m
+  [36m78[0m  [36m;; -------------------------[0m
+
+[36m----  Compiler Warning : Please see src/cljs/emmerce/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/emmerce/core.cljs   line:75  column:10  ----[0m
+
+  [1mNo such namespace: secretary, could not locate secretary.cljs, secretary.cljc, or JavaScript source providing "secretary"[0m
+
+  [36m71[0m  [36m  (doto (History.)[0m
+  [36m72[0m  [36m    (events/listen[0m
+  [36m73[0m  [36m      HistoryEventType/NAVIGATE[0m
+  [36m74[0m  [36m      (fn [event][0m
+  [33m75[0m  [1m        (secretary/dispatch! (.-token event))))[0m
+  [0m  [0m  [33m         ^--- No such namespace: secretary, could not locate secretary.cljs, secretary.cljc, or JavaScript source providing "secretary"[0m
+  [36m76[0m  [36m    (.setEnabled true)))[0m
+  [36m77[0m  [36m[0m
+  [36m78[0m  [36m;; -------------------------[0m
+  [36m79[0m  [36m;; Initialize app[0m
+  [36m80[0m  [36m(defn fetch-docs! [][0m
+
+[36m----  Compiler Warning : Please see src/cljs/emmerce/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/emmerce/core.cljs   line:75  column:10  ----[0m
+
+  [1mUse of undeclared Var secretary/dispatch![0m
+
+  [36m71[0m  [36m  (doto (History.)[0m
+  [36m72[0m  [36m    (events/listen[0m
+  [36m73[0m  [36m      HistoryEventType/NAVIGATE[0m
+  [36m74[0m  [36m      (fn [event][0m
+  [33m75[0m  [1m        (secretary/dispatch! (.-token event))))[0m
+  [0m  [0m  [33m         ^--- Use of undeclared Var secretary/dispatch![0m
+  [36m76[0m  [36m    (.setEnabled true)))[0m
+  [36m77[0m  [36m[0m
+  [36m78[0m  [36m;; -------------------------[0m
+  [36m79[0m  [36m;; Initialize app[0m
+  [36m80[0m  [36m(defn fetch-docs! [][0m
+
+[36m----  Compiler Warning : Please see src/cljs/emmerce/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.938 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/emmerce/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.688 seconds.[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.651 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/emmerce/pages/chatbot.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.629 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/emmerce/pages/dashboard.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.648 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/emmerce/pages/game.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.646 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/emmerce/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.636 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/emmerce/pages/login.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.639 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/emmerce/pages/videoref.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.652 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/emmerce/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.729 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/emmerce/core.js
