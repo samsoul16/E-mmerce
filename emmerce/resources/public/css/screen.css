@@ -40,12 +40,14 @@ body {
 .home {
     padding : 50px;
     display: flex ;
+    flex-wrap: wrap;
     justify-content : space-around;
 }
 
 .home-card{
-    width : 600px !important;
-    height : 807px !important;
+    margin: 0px 10px 50px 10px;
+    width : 500px !important;
+    height : 700px !important;
 }
 
 .chat-bot {

@@ -62,11 +62,11 @@
                        :onClick (fn [_] (secretary/dispatch! "/videos") (close))}]
          [ui/Divider ]
          [ui/ListItem {:primaryText "Play the Game" :leftIcon (reactify [icon "games"])
-                       :onClick (fn [_] (secretary/dispatch! "/game") (close))}]
-         [ui/Divider]
-         [ui/ListItem {:primaryText "Your Dashboard" :leftIcon (reactify [icon "dashboard"])
                        :onClick (fn [_] (secretary/dispatch! "/dashboard") (close))}]
          [ui/Divider]
+         #_[ui/ListItem {:primaryText "Your Dashboard" :leftIcon (reactify [icon "dashboard"])
+                       :onClick (fn [_] (secretary/dispatch! "/dashboard") (close))}]
+         #_[ui/Divider]
          [ui/ListItem {:primaryText "Logout" :leftIcon (reactify [icon "exit_to_app"])
                        :onClick (fn [_]
                                   (secretary/dispatch! "/")

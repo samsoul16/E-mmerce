@@ -8,18 +8,18 @@
             [emmerce.subscriptions]
             [reagent-material-ui.core :as ui]))
 
+(def server "http://localhost:3000/" )
+
 (defn game []
-  #_(GET (str server "addchat")
-       {:params {:email @(rf/subscribe [:get-user-email])
-                 :lang @curr-lang
-                 :text (.-value (.getElementById js/document "ipText"))}
+  #_(GET (str server "getfruits")
+       {:params {}
         :format :json
         :response-format :json
         :keywords? true
         :handler recieve-chat
         :error-handler error-handler})
   [:div.game
-
+[:h2 "GAME PAGE"]
    #_(doall (map (fn [x] [ui/Paper {:zDepth 3 :className "game-paper"}
                         [:h2 "GAME PAGE"]
                         ])
