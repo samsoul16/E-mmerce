@@ -64,7 +64,7 @@
 ;;;;;;;;;;;;;GAME
 
 ;;;;;USED TO SEED FRUITS DB - HAVE TAKEN SPANISH AS DEFAULT LANGUAGE
-(def f ["apple" "apricot" "avocado" "banana" "blackberry" "cantaloupe" "cherry" "coconut" "grape" "grapefruit" "kiwi" "lemon" "mango" "orange" "papaya" "peach" "pear" "pineapple" "strawberry" "watermelon"])
+(def f ["manzana" "albaricoque" "aguacate" "plátano" "mora" "cantalupo" "cereza" "coco" "uva" "pomelo" "kiwi" "limón" "mango" "naranja" "papaya" "melocotón" "pera" "piña" "fresa" "sandía"])
 
 (defn add-fruit [name trans imglink]
   (mc/insert db "fruits" {:name name
@@ -74,4 +74,9 @@
   (for [i (range 20)]
     (add-fruit (get f i)
                (translator/translate "SPANISH" (get f i))
-               (str (get f i) ".jpg"))))
+               (str (translator/translate "SPANISH" (get f i)) ".jpg"))))
+
+(fill-fruits)
+
+(defn get-fruits []
+  (mc/find-maps db "fruits"))

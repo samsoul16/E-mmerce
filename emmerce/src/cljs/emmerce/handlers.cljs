@@ -47,3 +47,14 @@
  :set-chats
  (fn [db [_ chats]]
    (assoc db :chats chats)))
+
+(reg-event-db
+ :set-fruits
+ (fn [db [_ fruits]]
+   #_(println fruits)
+   (assoc db :fruits fruits)))
+
+(reg-event-db
+ :set-snackbar
+ (fn [db [_ status msg]]
+   (assoc db :snackbar {:status  status :msg msg})))

@@ -5,6 +5,7 @@
             [clojure.java.io :as io]
             [emmerce.views.chatbot :as chatbot]
             [emmerce.views.videoref :as videoref]
+            [emmerce.views.game :as game]
             [clojure.data.json :as json]))
 
 (defn home-page []
@@ -33,6 +34,9 @@
   [email]
   (layout/render-json (videoref/set-initial-level email)))
 
+(defn get-fruits []
+  (layout/render-json (game/get-fruits)))
+
 (defroutes home-routes
   (GET "/" []
        (home-page))
@@ -53,4 +57,6 @@
        (get-level email))
 
   (POST "/setlevel" [email]
-       (set-initial-level email)))
+        (set-initial-level email))
+
+  (GET "/getfruits" [] (get-fruits)))

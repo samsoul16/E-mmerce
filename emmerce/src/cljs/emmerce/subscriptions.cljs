@@ -45,3 +45,13 @@
  :get-chats
  (fn [db _]
    (:chats db)))
+
+(reg-sub
+ :get-fruits
+ (fn [db _]
+   (or (:fruits db) [])))
+
+(reg-sub
+ :get-snackbar
+ (fn [db _]
+   (or (:snackbar db) {:status false :msg "NO MSG"})))
